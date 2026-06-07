@@ -1,0 +1,458 @@
+/* ============================================================
+   💫 YOU ARE MY UNIVERSE — Global Design System
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&family=Inter:wght@300;400;500;600&family=Dancing+Script:wght@400;500;600;700&display=swap');
+
+/* ── CSS Variables ── */
+:root {
+  --space-black: #050816;
+  --deep-space: #0a0f2c;
+  --midnight-blue: #0c1445;
+  --cosmic-purple: #2d1b69;
+  --nebula-pink: #e84393;
+  --nebula-rose: #fd79a8;
+  --soft-gold: #f0c27f;
+  --warm-gold: #e6ac55;
+  --starlight: #f8f9ff;
+  --star-white: #ffffff;
+  --glass-bg: rgba(255, 255, 255, 0.04);
+  --glass-border: rgba(255, 255, 255, 0.08);
+  --glass-bg-hover: rgba(255, 255, 255, 0.08);
+  --text-primary: #f8f9ff;
+  --text-secondary: rgba(248, 249, 255, 0.7);
+  --text-muted: rgba(248, 249, 255, 0.4);
+  --gradient-cosmic: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  --gradient-nebula: linear-gradient(135deg, #e84393 0%, #a855f7 50%, #6366f1 100%);
+  --gradient-gold: linear-gradient(135deg, #f0c27f 0%, #fc5c7d 100%);
+  --gradient-aurora: linear-gradient(135deg, #43e97b 0%, #38f9d7 25%, #667eea 50%, #764ba2 75%, #e84393 100%);
+  --shadow-glow: 0 0 30px rgba(232, 67, 147, 0.15);
+  --shadow-cosmic: 0 8px 32px rgba(0, 0, 0, 0.4);
+  --font-display: 'Cormorant Garamond', Georgia, serif;
+  --font-body: 'Inter', -apple-system, sans-serif;
+  --font-handwritten: 'Dancing Script', cursive;
+  --ease-cosmic: cubic-bezier(0.23, 1, 0.32, 1);
+  --ease-bounce: cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* ── Reset & Base ── */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: var(--font-body);
+  background: var(--space-black);
+  color: var(--text-primary);
+  overflow-x: hidden;
+  min-height: 100vh;
+  line-height: 1.7;
+}
+
+#root {
+  min-height: 100vh;
+  position: relative;
+}
+
+/* ── Scrollbar ── */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--space-black);
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(to bottom, var(--cosmic-purple), var(--nebula-pink));
+  border-radius: 3px;
+}
+
+/* ── Typography ── */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+  font-weight: 300;
+  letter-spacing: 0.02em;
+  line-height: 1.2;
+}
+
+h1 { font-size: clamp(2.5rem, 6vw, 5rem); }
+h2 { font-size: clamp(2rem, 4vw, 3.5rem); }
+h3 { font-size: clamp(1.5rem, 3vw, 2.5rem); }
+h4 { font-size: clamp(1.25rem, 2vw, 1.75rem); }
+
+p {
+  font-size: clamp(0.95rem, 1.5vw, 1.1rem);
+  color: var(--text-secondary);
+  max-width: 65ch;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+button {
+  font-family: var(--font-body);
+  cursor: pointer;
+  border: none;
+  background: none;
+  color: inherit;
+}
+
+/* ── Utility Classes ── */
+.text-gradient {
+  background: var(--gradient-nebula);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-gold {
+  background: var(--gradient-gold);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.glass {
+  background: var(--glass-bg);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid var(--glass-border);
+  border-radius: 20px;
+}
+
+.glass-card {
+  background: rgba(13, 17, 42, 0.6);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 24px;
+  padding: 2rem;
+  transition: all 0.5s var(--ease-cosmic);
+}
+
+.glass-card:hover {
+  background: rgba(13, 17, 42, 0.8);
+  border-color: rgba(232, 67, 147, 0.2);
+  box-shadow: var(--shadow-glow);
+  transform: translateY(-4px);
+}
+
+/* ── Section Layout ── */
+.section {
+  position: relative;
+  padding: 8rem 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.section-header h2 {
+  margin-bottom: 1rem;
+}
+
+.section-header p {
+  margin: 0 auto;
+}
+
+.section-divider {
+  width: 80px;
+  height: 2px;
+  background: var(--gradient-nebula);
+  margin: 1.5rem auto;
+  border-radius: 1px;
+}
+
+/* ── Buttons ── */
+.btn-cosmic {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.875rem 2rem;
+  background: linear-gradient(135deg, rgba(232, 67, 147, 0.2), rgba(168, 85, 247, 0.2));
+  border: 1px solid rgba(232, 67, 147, 0.3);
+  border-radius: 50px;
+  color: var(--starlight);
+  font-size: 0.95rem;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  transition: all 0.4s var(--ease-cosmic);
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-cosmic::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--gradient-nebula);
+  opacity: 0;
+  transition: opacity 0.4s;
+  border-radius: inherit;
+}
+
+.btn-cosmic:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 30px rgba(232, 67, 147, 0.3);
+  border-color: transparent;
+}
+
+.btn-cosmic:hover::before {
+  opacity: 1;
+}
+
+.btn-cosmic span {
+  position: relative;
+  z-index: 1;
+}
+
+/* ── Cosmic Background Stars ── */
+.cosmic-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* ── Star Field ── */
+.star-field {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.star {
+  position: absolute;
+  border-radius: 50%;
+  background: white;
+  animation: twinkle var(--duration) ease-in-out infinite;
+  animation-delay: var(--delay);
+}
+
+@keyframes twinkle {
+  0%, 100% { opacity: var(--min-opacity, 0.2); transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.3); }
+}
+
+/* ── Shooting Stars ── */
+.shooting-star {
+  position: fixed;
+  width: 100px;
+  height: 1px;
+  background: linear-gradient(to right, rgba(255,255,255,0), rgba(255,255,255,0.8), rgba(255,255,255,0));
+  animation: shoot linear forwards;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.shooting-star::before {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: -1px;
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  background: white;
+  box-shadow: 0 0 6px 2px rgba(255, 255, 255, 0.6);
+}
+
+@keyframes shoot {
+  0% { transform: translateX(0) translateY(0); opacity: 1; }
+  100% { transform: translateX(-500px) translateY(500px); opacity: 0; }
+}
+
+/* ── Nebula Glow Effects ── */
+.nebula-glow {
+  position: fixed;
+  border-radius: 50%;
+  filter: blur(80px);
+  opacity: 0.15;
+  pointer-events: none;
+  z-index: 0;
+  animation: nebulaPulse 8s ease-in-out infinite;
+}
+
+@keyframes nebulaPulse {
+  0%, 100% { opacity: 0.1; transform: scale(1); }
+  50% { opacity: 0.2; transform: scale(1.1); }
+}
+
+/* ── Floating Particles ── */
+.particle {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  animation: float-particle linear infinite;
+}
+
+@keyframes float-particle {
+  0% { transform: translateY(0) translateX(0); opacity: 0; }
+  10% { opacity: 1; }
+  90% { opacity: 1; }
+  100% { transform: translateY(-100vh) translateX(var(--drift, 50px)); opacity: 0; }
+}
+
+/* ── Page Transitions ── */
+.page-enter {
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+.page-enter-active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.page-exit {
+  opacity: 1;
+}
+
+.page-exit-active {
+  opacity: 0;
+  transform: translateY(-30px);
+}
+
+/* ── Floating Love Message ── */
+.floating-love-msg {
+  position: fixed;
+  font-family: var(--font-handwritten);
+  font-size: 1rem;
+  color: rgba(232, 67, 147, 0.5);
+  pointer-events: none;
+  z-index: 100;
+  animation: floatLoveMsg 8s ease-in-out forwards;
+  text-shadow: 0 0 10px rgba(232, 67, 147, 0.3);
+}
+
+@keyframes floatLoveMsg {
+  0% { opacity: 0; transform: translateY(20px) scale(0.9); }
+  15% { opacity: 0.7; }
+  85% { opacity: 0.7; }
+  100% { opacity: 0; transform: translateY(-60px) scale(1.05); }
+}
+
+/* ── Heart Pulse ── */
+.heart-pulse {
+  animation: heartPulse 1.5s ease-in-out infinite;
+}
+
+@keyframes heartPulse {
+  0%, 100% { transform: scale(1); }
+  15% { transform: scale(1.15); }
+  30% { transform: scale(1); }
+  45% { transform: scale(1.1); }
+}
+
+/* ── Glow Ring ── */
+.glow-ring {
+  box-shadow: 
+    0 0 20px rgba(232, 67, 147, 0.2),
+    0 0 40px rgba(232, 67, 147, 0.1),
+    inset 0 0 20px rgba(232, 67, 147, 0.1);
+}
+
+/* ── Photo Frame ── */
+.cosmic-frame {
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: var(--shadow-cosmic);
+}
+
+.cosmic-frame::before {
+  content: '';
+  position: absolute;
+  inset: -2px;
+  background: var(--gradient-nebula);
+  border-radius: inherit;
+  z-index: -1;
+  opacity: 0.5;
+}
+
+.cosmic-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: inherit;
+}
+
+/* ── Handwritten Text ── */
+.handwritten {
+  font-family: var(--font-handwritten);
+  font-weight: 400;
+}
+
+/* ── Letter Styles ── */
+.letter-text {
+  font-family: var(--font-display);
+  font-size: clamp(1.1rem, 2vw, 1.35rem);
+  font-weight: 300;
+  line-height: 2;
+  color: var(--text-secondary);
+  font-style: italic;
+}
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+  .section {
+    padding: 5rem 1.25rem;
+  }
+  
+  .glass-card {
+    padding: 1.5rem;
+    border-radius: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  html {
+    font-size: 14px;
+  }
+  
+  .section {
+    padding: 4rem 1rem;
+  }
+}
+
+/* ── Selection Color ── */
+::selection {
+  background: rgba(232, 67, 147, 0.3);
+  color: var(--starlight);
+}
+
+/* ── Focus Styles ── */
+:focus-visible {
+  outline: 2px solid var(--nebula-pink);
+  outline-offset: 2px;
+}

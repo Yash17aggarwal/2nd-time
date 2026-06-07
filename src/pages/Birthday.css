@@ -1,0 +1,313 @@
+/* ============================================================
+   BIRTHDAY SURPRISE PAGE STYLES
+   ============================================================ */
+
+.birthday-page {
+  position: relative;
+  z-index: 1;
+  min-height: 100vh;
+}
+
+/* ── Gift Section ── */
+.gift-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 2rem;
+}
+
+.gift-container {
+  text-align: center;
+}
+
+.gift-title {
+  font-size: clamp(2rem, 4vw, 3rem);
+  margin-bottom: 0.5rem;
+}
+
+.gift-subtitle {
+  font-family: var(--font-display);
+  font-style: italic;
+  color: var(--text-secondary);
+  margin-bottom: 3rem;
+}
+
+.gift-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 1rem;
+  margin: 0 auto;
+}
+
+.gift-box__body {
+  width: 160px;
+  height: 160px;
+  background: linear-gradient(135deg, #1a1040, #2d1b69);
+  border: 2px solid rgba(232, 67, 147, 0.3);
+  border-radius: 16px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s;
+}
+
+.gift-box:hover .gift-box__body {
+  border-color: rgba(232, 67, 147, 0.6);
+  box-shadow: 0 0 40px rgba(232, 67, 147, 0.2);
+}
+
+.gift-box__ribbon-h {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--gradient-gold);
+  transform: translateY(-50%);
+}
+
+.gift-box__ribbon-v {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background: var(--gradient-gold);
+  transform: translateX(-50%);
+}
+
+.gift-box__bow {
+  font-size: 2.5rem;
+  position: absolute;
+  top: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+  filter: drop-shadow(0 0 10px rgba(240, 194, 127, 0.5));
+}
+
+.gift-box__glow {
+  position: absolute;
+  inset: -30px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(232, 67, 147, 0.1), transparent 70%);
+  animation: glowPulse 3s ease-in-out infinite;
+}
+
+.gift-box__label {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  color: var(--soft-gold);
+  letter-spacing: 0.1em;
+}
+
+.gift-hint {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin-top: 1rem;
+}
+
+/* ── Celebration ── */
+.celebration {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.celebration__content {
+  position: relative;
+  text-align: center;
+  z-index: 10;
+  padding: 3rem;
+  max-width: 600px;
+}
+
+.celebration__emoji {
+  font-size: 4rem;
+  margin-bottom: 1.5rem;
+  display: inline-block;
+}
+
+.celebration__title {
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  font-weight: 300;
+  line-height: 1.2;
+  margin-bottom: 1.5rem;
+}
+
+.celebration__divider {
+  width: 120px;
+  height: 2px;
+  background: var(--gradient-gold);
+  margin: 0 auto 2rem;
+  transform-origin: center;
+}
+
+.celebration__message {
+  font-family: var(--font-display);
+  font-size: clamp(1.1rem, 2vw, 1.4rem);
+  font-style: italic;
+  line-height: 1.8;
+  color: var(--text-secondary);
+  max-width: 500px;
+  margin: 0 auto 2rem;
+}
+
+.celebration__name {
+  margin-top: 1rem;
+}
+
+/* Sparkle Ring */
+.celebration__sparkle-ring {
+  position: absolute;
+  inset: -40px;
+  pointer-events: none;
+}
+
+.sparkle-dot {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  font-size: 0.7rem;
+  color: var(--soft-gold);
+  transform: translate(-50%, -50%) rotate(var(--angle)) translateY(-180px);
+  animation: sparklePulse 2s ease-in-out infinite;
+}
+
+@keyframes sparklePulse {
+  0%, 100% { opacity: 0.2; }
+  50% { opacity: 1; }
+}
+
+/* ── Fireworks ── */
+.fireworks-layer {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 5;
+}
+
+.firework {
+  position: absolute;
+}
+
+.firework__particle {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--color);
+  box-shadow: 0 0 6px var(--color);
+  animation: fireworkBurst 1.5s ease-out forwards;
+  animation-delay: var(--delay, 0s);
+  transform: translate(-50%, -50%) rotate(var(--angle)) translateY(0);
+}
+
+@keyframes fireworkBurst {
+  0% {
+    opacity: 1;
+    transform: translate(-50%, -50%) rotate(var(--angle)) translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(-50%, -50%) rotate(var(--angle)) translateY(calc(var(--distance) * -1));
+  }
+}
+
+/* ── Confetti ── */
+.confetti-layer {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 4;
+  overflow: hidden;
+}
+
+.confetti-piece {
+  position: absolute;
+  top: -20px;
+  width: var(--size);
+  height: var(--size);
+  background: var(--color);
+  border-radius: 2px;
+  animation: confettiFall var(--duration) ease-in forwards;
+  animation-delay: var(--delay);
+  transform: rotate(var(--rotation));
+}
+
+@keyframes confettiFall {
+  0% {
+    top: -20px;
+    opacity: 1;
+    transform: rotate(0deg) translateX(0);
+  }
+  100% {
+    top: 110vh;
+    opacity: 0;
+    transform: rotate(720deg) translateX(var(--drift, 50px));
+  }
+}
+
+/* ── Floating Hearts ── */
+.hearts-layer {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 3;
+  overflow: hidden;
+}
+
+.floating-heart {
+  position: absolute;
+  bottom: -20px;
+  font-size: var(--size);
+  animation: heartRise var(--duration) ease-out forwards;
+  animation-delay: var(--delay);
+  opacity: 0;
+}
+
+@keyframes heartRise {
+  0% {
+    bottom: -20px;
+    opacity: 0;
+    transform: translateX(0) scale(0.5);
+  }
+  20% {
+    opacity: 0.8;
+    transform: translateX(-20px) scale(1);
+  }
+  80% {
+    opacity: 0.6;
+  }
+  100% {
+    bottom: 110vh;
+    opacity: 0;
+    transform: translateX(30px) scale(0.8);
+  }
+}
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+  .gift-box__body {
+    width: 130px;
+    height: 130px;
+  }
+
+  .celebration__content {
+    padding: 2rem;
+  }
+
+  .sparkle-dot {
+    transform: translate(-50%, -50%) rotate(var(--angle)) translateY(-120px);
+  }
+}

@@ -1,0 +1,473 @@
+/* ============================================================
+   LETTER PAGE STYLES
+   ============================================================ */
+
+.letter-page {
+  position: relative;
+  z-index: 1;
+  padding-top: 5rem;
+  min-height: 100vh;
+}
+
+/* ── Envelope Section ── */
+.envelope-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 80vh;
+  padding: 2rem;
+}
+
+.envelope-container {
+  text-align: center;
+}
+
+.envelope-title {
+  font-size: clamp(2rem, 4vw, 3rem);
+  margin-bottom: 0.5rem;
+}
+
+.envelope-subtitle {
+  font-family: var(--font-display);
+  font-style: italic;
+  color: var(--text-secondary);
+  margin-bottom: 3rem;
+}
+
+.envelope {
+  position: relative;
+  width: 240px;
+  height: 160px;
+  margin: 0 auto;
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 0;
+  transition: transform 0.3s;
+}
+
+.envelope:hover:not(:disabled) {
+  transform: scale(1.05);
+}
+
+.envelope__body {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #1a1235, #2d1b69);
+  border: 1px solid rgba(232, 67, 147, 0.3);
+  border-radius: 4px;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.envelope__flap {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 80px;
+  background: linear-gradient(135deg, #2d1b69, #1a1235);
+  border: 1px solid rgba(232, 67, 147, 0.3);
+  clip-path: polygon(0 0, 50% 100%, 100% 0);
+  z-index: 2;
+  transform-origin: top center;
+  transition: transform 0.8s var(--ease-cosmic);
+}
+
+.envelope--open .envelope__flap {
+  transform: rotateX(180deg);
+}
+
+.envelope__letter-peek {
+  font-size: 2rem;
+  opacity: 0.6;
+  transition: all 0.8s;
+}
+
+.envelope--open .envelope__letter-peek {
+  transform: translateY(-30px);
+  opacity: 1;
+}
+
+.envelope__glow {
+  position: absolute;
+  inset: -20px;
+  background: radial-gradient(circle, rgba(232, 67, 147, 0.15), transparent 70%);
+  border-radius: 50%;
+  animation: glowPulse 3s ease-in-out infinite;
+}
+
+.envelope-hint {
+  margin-top: 1.5rem;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  letter-spacing: 0.1em;
+}
+
+/* ── Letter Content ── */
+.letter-content {
+  position: relative;
+  overflow: hidden;
+}
+
+.letter-stardust {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.stardust-particle {
+  position: absolute;
+  bottom: -10px;
+  width: 2px;
+  height: 2px;
+  background: rgba(232, 67, 147, 0.4);
+  border-radius: 50%;
+  animation: float-particle linear infinite;
+}
+
+.letter-scroll {
+  position: relative;
+  z-index: 1;
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 4rem 2rem 8rem;
+}
+
+.letter-section {
+  margin-bottom: 5rem;
+}
+
+.letter-greeting {
+  font-size: clamp(2rem, 4vw, 3rem);
+  color: var(--soft-gold);
+  margin-bottom: 2rem;
+}
+
+.letter-heading {
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  text-align: center;
+  margin-bottom: 0.5rem;
+  font-weight: 400;
+}
+
+.letter-body {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+/* ── Distance Visual ── */
+.letter-distance-visual {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin: 2rem 0;
+}
+
+.letter-planet {
+  font-size: 2rem;
+  animation: planetFloat 4s ease-in-out infinite;
+}
+
+.letter-planet:last-child {
+  animation-delay: 1s;
+}
+
+.letter-stars-bridge {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.bridge-star {
+  font-size: 0.7rem;
+  animation: bridgeStar 2s ease-in-out infinite;
+}
+
+@keyframes bridgeStar {
+  0%, 100% { opacity: 0.3; transform: scale(0.8); }
+  50% { opacity: 1; transform: scale(1.2); }
+}
+
+/* ── Memory Stars ── */
+.letter-memories {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.letter-memory-star {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1.25rem;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 16px;
+  cursor: pointer;
+  transition: all 0.3s var(--ease-cosmic);
+  min-width: 150px;
+}
+
+.letter-memory-star:hover {
+  background: rgba(232, 67, 147, 0.08);
+  border-color: rgba(232, 67, 147, 0.2);
+}
+
+.letter-memory-star__icon {
+  font-size: 1.5rem;
+}
+
+.letter-memory-star__title {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  text-align: center;
+}
+
+/* ── Birthday Section ── */
+.letter-section--birthday {
+  text-align: center;
+  padding: 3rem 0;
+}
+
+.birthday-header {
+  position: relative;
+  display: inline-block;
+  margin-bottom: 2rem;
+}
+
+.birthday-title {
+  font-size: clamp(1.8rem, 4vw, 2.8rem);
+  background: var(--gradient-gold);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.birthday-stars {
+  position: absolute;
+  inset: -30px;
+  pointer-events: none;
+}
+
+.birthday-star-particle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  font-size: 0.6rem;
+  transform: translate(-50%, -50%) rotate(var(--angle)) translateY(calc(var(--distance) * -1));
+  animation: birthdayStarTwinkle 2s ease-in-out infinite;
+}
+
+@keyframes birthdayStarTwinkle {
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 1; }
+}
+
+.letter-section--birthday .letter-body {
+  text-align: center;
+}
+
+.letter-section--birthday .letter-text {
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* ── Promises ── */
+.promises-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-top: 1.5rem;
+}
+
+.promise-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.85rem 1.25rem;
+  background: rgba(255, 255, 255, 0.02);
+  border-left: 2px solid rgba(240, 194, 127, 0.3);
+  border-radius: 0 12px 12px 0;
+  transition: all 0.3s;
+}
+
+.promise-item:hover {
+  background: rgba(240, 194, 127, 0.05);
+  border-left-color: var(--soft-gold);
+  transform: translateX(4px);
+}
+
+.promise-star {
+  font-size: 0.85rem;
+  flex-shrink: 0;
+}
+
+.promise-text {
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  color: var(--text-secondary);
+  font-style: italic;
+}
+
+/* ── Dreams ── */
+.dreams-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.dream-card {
+  text-align: center;
+  padding: 1.5rem !important;
+}
+
+.dream-icon {
+  font-size: 2rem;
+  display: block;
+  margin-bottom: 0.75rem;
+}
+
+.dream-title {
+  font-size: 1.1rem;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+
+.dream-desc {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+
+/* ── Voice Note ── */
+.voice-note {
+  text-align: center;
+  padding: 2rem !important;
+  max-width: 400px;
+  margin: 1.5rem auto 0;
+}
+
+.voice-note__visual {
+  margin-bottom: 1rem;
+  overflow: hidden;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.voice-wave {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  height: 40px;
+}
+
+.voice-wave__bar {
+  width: 3px;
+  background: linear-gradient(to top, var(--nebula-pink), var(--cosmic-purple));
+  border-radius: 2px;
+  transition: height 0.3s;
+  opacity: 0.3;
+}
+
+.voice-wave--playing .voice-wave__bar {
+  opacity: 1;
+  animation: waveBar 0.8s ease-in-out infinite alternate;
+}
+
+@keyframes waveBar {
+  0% { height: 8px; }
+  100% { height: 35px; }
+}
+
+.voice-note__play {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--nebula-pink), var(--cosmic-purple));
+  border: none;
+  font-size: 1.25rem;
+  cursor: pointer;
+  transition: all 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  color: white;
+}
+
+.voice-note__play:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 30px rgba(232, 67, 147, 0.3);
+}
+
+.voice-note__label {
+  margin-top: 0.75rem;
+  font-size: 0.8rem !important;
+  color: var(--text-muted) !important;
+  font-style: italic;
+}
+
+/* ── Closing ── */
+.letter-section--closing {
+  text-align: center;
+  padding-top: 3rem;
+}
+
+.letter-section--closing .letter-body {
+  align-items: center;
+}
+
+.letter-section--closing .letter-text {
+  text-align: center;
+}
+
+.letter-closing-heart {
+  font-size: 3rem;
+  margin: 2rem 0;
+}
+
+.letter-signature {
+  margin-top: 2rem;
+}
+
+.letter-signature-name {
+  font-size: 2.5rem;
+  background: var(--gradient-gold);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-top: 0.5rem;
+}
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+  .letter-scroll {
+    padding: 3rem 1.25rem 6rem;
+  }
+
+  .dreams-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .letter-memory-star {
+    min-width: 120px;
+  }
+
+  .envelope {
+    width: 200px;
+    height: 130px;
+  }
+}

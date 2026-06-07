@@ -1,0 +1,319 @@
+/* ============================================================
+   FOREVER US PAGE STYLES
+   ============================================================ */
+
+.forever-page {
+  position: relative;
+  z-index: 1;
+  padding-top: 5rem;
+}
+
+/* ── Merging Stars Scene ── */
+.forever-scene {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 80vh;
+  padding: 4rem 2rem;
+}
+
+.forever-stars {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+  position: relative;
+}
+
+.forever-star {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  position: relative;
+  z-index: 2;
+}
+
+.forever-star__body {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: white;
+}
+
+.forever-star--1 .forever-star__body {
+  background: #667eea;
+  box-shadow: 0 0 20px #667eea;
+}
+
+.forever-star--2 .forever-star__body {
+  background: var(--nebula-pink);
+  box-shadow: 0 0 20px var(--nebula-pink);
+}
+
+.forever-star__glow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  opacity: 0.3;
+  animation: glowPulse 3s ease-in-out infinite;
+}
+
+.forever-star__glow--blue {
+  background: radial-gradient(circle, #667eea, transparent 70%);
+}
+
+.forever-star__glow--pink {
+  background: radial-gradient(circle, var(--nebula-pink), transparent 70%);
+}
+
+.forever-star__label {
+  font-size: 1rem;
+  color: var(--text-secondary);
+  white-space: nowrap;
+}
+
+/* ── Merge Effect ── */
+.forever-merge {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 1rem;
+}
+
+.forever-merge__galaxy {
+  position: absolute;
+  inset: -20px;
+  border-radius: 50%;
+  background: conic-gradient(
+    from 0deg,
+    rgba(232, 67, 147, 0.2),
+    rgba(99, 102, 241, 0.2),
+    rgba(168, 85, 247, 0.2),
+    rgba(232, 67, 147, 0.2)
+  );
+  animation: galaxySpin 15s linear infinite;
+  filter: blur(15px);
+}
+
+@keyframes galaxySpin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.forever-merge__heart-glow {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(232, 67, 147, 0.3), transparent 70%);
+  animation: glowPulse 3s ease-in-out infinite;
+}
+
+.forever-merge__photo {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 2px solid rgba(232, 67, 147, 0.4);
+  box-shadow:
+    0 0 30px rgba(232, 67, 147, 0.2),
+    0 0 60px rgba(232, 67, 147, 0.1);
+  position: relative;
+  z-index: 1;
+}
+
+.forever-merge__photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ── Final Message ── */
+.forever-message {
+  text-align: center;
+  padding: 6rem 2rem;
+}
+
+.forever-text-flow {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+
+.forever-quote {
+  font-family: var(--font-display);
+  font-size: clamp(1.5rem, 3.5vw, 2.5rem);
+  font-weight: 300;
+  font-style: italic;
+  color: var(--text-secondary);
+  max-width: 600px;
+  line-height: 1.5;
+}
+
+.forever-quote--highlight {
+  font-size: clamp(1.8rem, 4vw, 3rem);
+  color: var(--starlight);
+}
+
+.forever-quote--final {
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-style: normal;
+  font-weight: 400;
+  color: var(--starlight);
+}
+
+.forever-dots {
+  display: flex;
+  gap: 1.5rem;
+  color: var(--text-muted);
+  font-size: 0.6rem;
+  letter-spacing: 1rem;
+}
+
+/* ── Signature ── */
+.forever-signature {
+  text-align: center;
+  padding: 4rem 2rem 6rem;
+}
+
+.signature-container {
+  position: relative;
+}
+
+.signature-heart {
+  font-size: 3rem;
+  margin-bottom: 1.5rem;
+  display: inline-block;
+}
+
+.signature-text {
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  font-style: italic;
+  color: var(--text-secondary);
+}
+
+.signature-name {
+  font-size: clamp(3rem, 6vw, 5rem);
+  background: var(--gradient-gold);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin: 0.5rem 0 1.5rem;
+}
+
+.signature-line {
+  width: 200px;
+  height: 1px;
+  margin: 0 auto 2rem;
+  background: rgba(255, 255, 255, 0.1);
+  overflow: hidden;
+}
+
+.signature-line__inner {
+  width: 100%;
+  height: 100%;
+  background: var(--gradient-nebula);
+  transform-origin: left center;
+}
+
+.signature-final {
+  font-family: var(--font-display);
+  font-size: clamp(1rem, 2vw, 1.3rem);
+  font-style: italic;
+  color: var(--text-secondary);
+  line-height: 2;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+/* Floating emojis */
+.signature-emojis {
+  position: absolute;
+  inset: -80px;
+  pointer-events: none;
+}
+
+.signature-emoji {
+  position: absolute;
+  left: var(--x);
+  bottom: 0;
+  font-size: 1rem;
+  opacity: 0;
+  animation: emojiFloat var(--duration) ease-out infinite;
+  animation-delay: var(--delay);
+}
+
+@keyframes emojiFloat {
+  0% { bottom: 0; opacity: 0; transform: scale(0.5); }
+  15% { opacity: 0.6; transform: scale(1); }
+  85% { opacity: 0.4; }
+  100% { bottom: 100%; opacity: 0; transform: scale(0.7); }
+}
+
+/* ── Footer ── */
+.forever-footer {
+  text-align: center;
+  padding: 3rem 2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.forever-footer p {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin: 0 auto;
+}
+
+.forever-footer__year {
+  margin-top: 0.5rem !important;
+  font-size: 0.75rem !important;
+  letter-spacing: 0.15em;
+}
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+  .forever-stars {
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .forever-merge {
+    margin: 1rem 0;
+    width: 160px;
+    height: 160px;
+  }
+
+  .forever-merge__photo {
+    width: 110px;
+    height: 110px;
+  }
+
+  .forever-star__body {
+    width: 12px;
+    height: 12px;
+  }
+
+  .forever-scene {
+    min-height: 70vh;
+  }
+}
+
+@media (max-width: 480px) {
+  .forever-merge {
+    width: 140px;
+    height: 140px;
+  }
+
+  .forever-merge__photo {
+    width: 100px;
+    height: 100px;
+  }
+}
