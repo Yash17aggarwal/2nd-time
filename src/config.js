@@ -40,7 +40,7 @@ const CONFIG = {
       date: "January 1, 2024",
       story: "The universe conspired to bring us together. From that very first moment, I knew something had changed forever.",
       caption: "Where it all began",
-      photo: "/photos/timeline-1.jpg",
+      photo: "/photos/nature.jpg",
     },
     {
       icon: "🌙",
