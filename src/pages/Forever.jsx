@@ -192,7 +192,7 @@ export default function Forever() {
       {/* ── Footer ── */}
       <footer className="forever-footer">
         <p>Made with all the love in my heart ❤️</p>
-        <p className="forever-footer__year">2024 — Forever</p>
+        <p className="forever-footer__year">— Forever</p>
       </footer>
     </div>
   );
