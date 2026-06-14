@@ -24,10 +24,10 @@ const CONFIG = {
   // Replace these paths with your actual photo paths.
   // Place photos in the /public/photos/ folder.
   // ──────────────────────────────────────────────
-  herPhoto: "/photos/her.jpg",
-  yourPhoto: "/photos/you.jpg",
-  couplePhoto: "/photos/couple.jpg",
-  favoritePhoto: "/photos/favorite.jpg",
+  herPhoto: "/2nd-time/photos/her.jpg",
+  yourPhoto: "/2nd-time/photos/you.jpg",
+  couplePhoto: "/2nd-time/photos/couple.jpg",
+  favoritePhoto: "/2nd-time/photos/favorite.jpg",
 
   // ──────────────────────────────────────────────
   // 📖 OUR STORY — Timeline Events
@@ -40,7 +40,7 @@ const CONFIG = {
       date: "January 1, 2024",
       story: "The universe conspired to bring us together. From that very first moment, I knew something had changed forever.",
       caption: "Where it all began",
-      photo: "/photos/nature.jpg",
+      photo: "/2nd-time/photos/nature.jpg",
     },
     {
       icon: "🌙",
@@ -48,7 +48,7 @@ const CONFIG = {
       date: "January 5, 2024",
       story: "Hours felt like minutes. Words flowed like cosmic rivers. We connected in a way I never thought possible.",
       caption: "When time stood still",
-      photo: "/photos/timeline-2.jpg",
+      photo: "/2nd-time/photos/nature.jpg",
     },
     {
       icon: "⭐",
@@ -56,7 +56,7 @@ const CONFIG = {
       date: "March 14, 2024",
       story: "Three words. Eight letters. One universe of meaning. The moment those words left my lips, every star in the sky shone brighter.",
       caption: "The words that changed everything",
-      photo: "/photos/timeline-3.jpg",
+      photo: "/2nd-time/photos/timeline-3.jpg",
     },
     {
       icon: "☄️",
@@ -64,7 +64,7 @@ const CONFIG = {
       date: "May 20, 2024",
       story: "Some moments are so perfect that the universe itself pauses to admire them. This was one of those moments.",
       caption: "Pure magic",
-      photo: "/photos/timeline-4.jpg",
+      photo: "/2nd-time/photos/timeline-4.jpg",
     },
     {
       icon: "🪐",
@@ -72,7 +72,7 @@ const CONFIG = {
       date: "August 8, 2024",
       story: "It wasn't a single moment—it was every moment with you. Every laugh, every tear, every silence that spoke volumes.",
       caption: "The moment of certainty",
-      photo: "/photos/timeline-5.jpg",
+      photo: "/2nd-time/photos/timeline-5.jpg",
     },
     {
       icon: "🌌",
@@ -80,7 +80,7 @@ const CONFIG = {
       date: "Forever",
       story: "This chapter hasn't been written yet. But I already know it will be the most beautiful one—because I'll be writing it with you.",
       caption: "The best is yet to come",
-      photo: "/photos/timeline-6.jpg",
+      photo: "/2nd-time/photos/timeline-6.jpg",
     },
   ],
 
@@ -89,24 +89,24 @@ const CONFIG = {
   // Add as many photos as you want.
   // ──────────────────────────────────────────────
   galleryPhotos: [
-    { src: "/photos/gallery-1.jpg", caption: "My Favorite Smile", date: "2024", category: "her" },
-    { src: "/photos/gallery-2.jpg", caption: "Our Late Night Talks", date: "2024", category: "us" },
-    { src: "/photos/gallery-3.jpg", caption: "The Call That Made My Day", date: "2024", category: "us" },
-    { src: "/photos/gallery-4.jpg", caption: "One More Reason I Love You", date: "2024", category: "her" },
-    { src: "/photos/gallery-5.jpg", caption: "Screenshot Memory", date: "2024", category: "us" },
-    { src: "/photos/gallery-6.jpg", caption: "Video Call Moment", date: "2024", category: "us" },
-    { src: "/photos/gallery-7.jpg", caption: "My Beautiful Girl", date: "2024", category: "her" },
-    { src: "/photos/gallery-8.jpg", caption: "Us Against The World", date: "2024", category: "us" },
+    { src: "/2nd-time/photos/gallery-1.jpg", caption: "My Favorite Smile", date: "2024", category: "her" },
+    { src: "/2nd-time/photos/gallery-2.jpg", caption: "Our Late Night Talks", date: "2024", category: "us" },
+    { src: "/2nd-time/photos/gallery-3.jpg", caption: "The Call That Made My Day", date: "2024", category: "us" },
+    { src: "/2nd-time/photos/gallery-4.jpg", caption: "One More Reason I Love You", date: "2024", category: "her" },
+    { src: "/2nd-time/photos/gallery-5.jpg", caption: "Screenshot Memory", date: "2024", category: "us" },
+    { src: "/2nd-time/photos/gallery-6.jpg", caption: "Video Call Moment", date: "2024", category: "us" },
+    { src: "/2nd-time/photos/gallery-7.jpg", caption: "My Beautiful Girl", date: "2024", category: "her" },
+    { src: "/2nd-time/photos/gallery-8.jpg", caption: "Us Against The World", date: "2024", category: "us" },
   ],
 
   // Before & After photos
   beforePhotos: [
-    { src: "/photos/before-1.jpg", caption: "Solo adventures" },
-    { src: "/photos/before-2.jpg", caption: "Just me" },
+    { src: "/2nd-time/photos/before-1.jpg", caption: "Solo adventures" },
+    { src: "/2nd-time/photos/before-2.jpg", caption: "Just me" },
   ],
   afterPhotos: [
-    { src: "/photos/after-1.jpg", caption: "Adventures with you" },
-    { src: "/photos/after-2.jpg", caption: "Everything is better" },
+    { src: "/2nd-time/photos/after-1.jpg", caption: "Adventures with you" },
+    { src: "/2nd-time/photos/after-2.jpg", caption: "Everything is better" },
   ],
 
   // ──────────────────────────────────────────────
